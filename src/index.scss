@@ -7,11 +7,11 @@
 @layer components {
   // Header, body text definitions
   body {
-    @apply dark:bg-custom-black dark:text-white;
+    @apply dark:bg-custom-black dark:text-white w-screen max-w-[773px] px-[24px] mx-auto mt-[58px];
   }
   .heading-l,
   h1 {
-    @apply text-[4rem] leading-[4.813rem];
+    @apply md:text-[4rem] md:leading-[4.813rem] text-[2rem];
   }
   .heading-m,
   h2 {
@@ -23,11 +23,11 @@
   }
   .body-m,
   p {
-    @apply text-[1.125rem] font-[1.5rem];
+    @apply text-[1.125rem] leading-[1.5rem];
   }
   .body-s,
   small {
-    @apply text-[0.875rem] font-[1.063rem];
+    @apply text-[0.875rem] leading-[1.063rem];
   }
   // Icon Styling
   .play-svg {

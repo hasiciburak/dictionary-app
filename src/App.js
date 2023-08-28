@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.scss'
 import Play from './components/icons/Play'
 import ModeSwitch from './components/shared/ModeSwitch'
+import NoDefinition from './components/layout/NoDefinition'
 
 function App() {
   const [mode, setMode] = useState()
@@ -19,6 +20,7 @@ function App() {
       <h1 className="font-lora font-bold">Aliquam</h1>
       <Play />
       <ModeSwitch mode={mode} />
+      <NoDefinition />
     </div>
   )
 }

@@ -5,6 +5,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 @layer components {
+  // Header, body text definitions
+  body {
+    @apply dark:bg-custom-black dark:text-white;
+  }
   .heading-l,
   h1 {
     @apply text-[4rem] leading-[4.813rem];
@@ -24,5 +28,15 @@
   .body-s,
   small {
     @apply text-[0.875rem] font-[1.063rem];
+  }
+  // Icon Styling
+  .play-svg {
+    @apply cursor-pointer;
+    &:is(:hover) circle {
+      @apply opacity-100;
+    }
+    &:is(:hover) path {
+      @apply fill-white;
+    }
   }
 }

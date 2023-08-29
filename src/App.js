@@ -4,6 +4,7 @@ import Play from './components/icons/Play'
 import Navigation from './components/layout/Navigation'
 import Header from './components/layout/Header'
 import MeaningArea from './components/layout/MeaningArea'
+import SourceArea from './components/layout/SourceArea'
 
 function App() {
   const [mode, setMode] = useState()
@@ -43,7 +44,7 @@ function App() {
       <Header fontClass={fontClass} />
       <MeaningArea fontClass={fontClass} />
       <MeaningArea fontClass={fontClass} />
-
+      <SourceArea fontClass={fontClass} />
       {/* IF THERE IS NO DEFINITION PROVIDED */}
       {/* <NoDefinition /> */}
     </div>

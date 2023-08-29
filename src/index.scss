@@ -6,6 +6,11 @@
 
 @layer components {
   // Header, body text definitions
+  *,
+  *::before,
+  *::after {
+    @apply font-inter;
+  }
   body {
     @apply dark:bg-custom-black dark:text-white w-screen max-w-[773px] px-[24px] mx-auto mt-[58px];
   }
@@ -40,3 +45,4 @@
     }
   }
 }
+

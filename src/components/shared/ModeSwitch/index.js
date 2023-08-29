@@ -6,7 +6,7 @@ const ModeSwitch = ({ mode }) => {
   const [toggleSwtich, setToggleSwitch] = useState(false)
   return (
     <div
-      className="flex gap-[10px] items-center pt-4
+      className="flex gap-[10px] items-center
     "
     >
       <ReactSwitch

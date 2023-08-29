@@ -15,9 +15,9 @@ module.exports = {
       'sunset-orange': '#FF5252',
     },
     fontFamily: {
-      inter: ['Inter', 'Arial', 'Helvetica', 'sans-serif'],
-      lora: ['Lora', 'serif'],
-      inconsolata: ['Inconsolata', '"Courier New"', 'Courier', 'monospace'],
+      inter: ['"Inter"', 'Arial', 'Helvetica', 'sans-serif'],
+      lora: ['"Lora"', 'serif'],
+      inconsolata: ['"Inconsolata"', '"Courier New"', 'Courier', 'monospace'],
     },
     extend: {},
   },

@@ -44,5 +44,9 @@
       @apply fill-white;
     }
   }
+  .custom-search-input,
+  .custom-search-input:focus,
+  .custom-search-input:focus-visible {
+    @apply shadow-none ring-0 border-0;
+  }
 }
-

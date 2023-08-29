@@ -1,17 +1,24 @@
 import React from 'react'
-import ModeSwitch from '../../shared/ModeSwitch'
-import FontDropdown from '../../shared/FontDropdown'
-import bookIcon from '../../../assets/images/logo.svg'
-const Header = ({ buttonContent, setButtonContent, fontClass }) => {
+import Play from '../../icons/Play'
+import SearchBar from '../../shared/SearchBar'
+
+const Header = ({ fontClass }) => {
   return (
-    <div className="flex justify-between">
-      <img src={bookIcon} alt="Dictionary Book Icon" />
-      <div className="flex items-center gap-[26px]">
-        <FontDropdown buttonContent={buttonContent} setButtonContent={setButtonContent} fontClass={fontClass} />
-        <span className="w-[1px] h-full bg-custom-gray-2"></span>
-        <ModeSwitch />
+    <>
+      <SearchBar classes="mt-[24px]" />
+      <div
+        className={`flex justify-between items-center mt-[28px]
+    `}
+      >
+        <div>
+          <h1 className={`${fontClass} font-bold`}>keyboard</h1>
+          <p className={`${fontClass} text-dark-orchid`}>/ˈkiːbɔːd/</p>
+        </div>
+        <div>
+          <Play />
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

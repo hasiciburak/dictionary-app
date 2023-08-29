@@ -12,7 +12,7 @@
     @apply font-inter;
   }
   body {
-    @apply dark:bg-custom-black dark:text-white w-screen max-w-[773px] px-[24px] mx-auto mt-[58px];
+    @apply dark:bg-custom-black dark:text-white w-full max-w-[773px] px-[24px] mx-auto mt-[58px];
   }
   .heading-l,
   h1 {

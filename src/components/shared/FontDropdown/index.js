@@ -24,7 +24,7 @@ const FontDropdown = ({ buttonContent, setButtonContent, fontClass }) => {
       {open && (
         <ul
           ref={buttonRef}
-          className="text-left body-m font-bold p-6 absolute z-10 bg-white min-w-[183px] rounded-2xl shadow-[0px_5px_30px_0px_rgba(0,0,0,0.10)] mt-4"
+          className="text-left body-m font-bold p-6 absolute z-10 bg-white min-w-[183px] rounded-2xl shadow-[0px_5px_30px_0px_rgba(0,0,0,0.10)] mt-4 dark:bg-custom-black-2 dark:shadow-[0px_5px_30px_0px_rgba(164,69,237,1)]"
         >
           <li
             className="hover:text-dark-orchid mb-4 cursor-pointer"

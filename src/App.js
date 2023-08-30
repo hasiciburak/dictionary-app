@@ -4,6 +4,7 @@ import Navigation from './components/layout/Navigation'
 import Header from './components/layout/Header'
 import MeaningArea from './components/layout/MeaningArea'
 import SourceArea from './components/layout/SourceArea'
+import axios from 'axios'
 
 function App() {
   const [mode, setMode] = useState()
@@ -19,10 +20,18 @@ function App() {
       ? 'font-inconsolata'
       : ''
 
+  const getData = async () => {
+    const { data } = await axios.get('https://api.dictionaryapi.dev/api/v2/entries/en/hello')
+    console.log('DATA', data)
+  }
   useEffect(() => {
     setFontClass(font)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [buttonContent])
+
+  useEffect(() => {
+    getData()
+  }, [])
 
   useEffect(() => {
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {

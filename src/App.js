@@ -20,8 +20,8 @@ function App() {
       ? 'font-inconsolata'
       : ''
 
-  const getData = async () => {
-    const { data } = await axios.get('https://api.dictionaryapi.dev/api/v2/entries/en/hello')
+  const getData = async (word) => {
+    const { data } = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
     console.log('DATA', data)
   }
   useEffect(() => {
@@ -30,7 +30,7 @@ function App() {
   }, [buttonContent])
 
   useEffect(() => {
-    getData()
+    getData('congrats')
   }, [])
 
   useEffect(() => {

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import './App.scss'
-import Play from './components/icons/Play'
 import Navigation from './components/layout/Navigation'
 import Header from './components/layout/Header'
 import MeaningArea from './components/layout/MeaningArea'
@@ -22,6 +21,7 @@ function App() {
 
   useEffect(() => {
     setFontClass(font)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [buttonContent])
 
   useEffect(() => {

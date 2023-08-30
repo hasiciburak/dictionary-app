@@ -5,7 +5,7 @@ import SearchBar from '../../shared/SearchBar'
 const Header = ({ fontClass }) => {
   return (
     <>
-      <SearchBar classes="mt-[24px]" />
+      <SearchBar classes="mt-[24px]" fontClass={fontClass} />
       <div
         className={`flex justify-between items-center mt-[28px]
     `}

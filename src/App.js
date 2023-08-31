@@ -10,6 +10,11 @@ function App() {
   const [mode, setMode] = useState()
   const [buttonContent, setButtonContent] = useState('Sans Serif')
   const [fontClass, setFontClass] = useState(buttonContent)
+  const [wordData, setWordData] = useState({})
+
+  let reqOptions = {
+    url: 'https://api.dictionaryapi.dev/api/v2/entries/en/hello',
+  }
 
   const font =
     buttonContent === 'Sans Serif'
@@ -22,15 +27,17 @@ function App() {
 
   const getData = async (word) => {
     const { data } = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
-    console.log('DATA', data)
+    setWordData(data[0])
   }
+
   useEffect(() => {
     setFontClass(font)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [buttonContent])
 
   useEffect(() => {
-    getData('congrats')
+    getData('hello')
+    console.log(wordData)
   }, [])
 
   useEffect(() => {
@@ -50,7 +57,7 @@ function App() {
         mode={mode}
         setMode={setMode}
       />
-      <Header fontClass={fontClass} />
+      <Header fontClass={fontClass} wordData={wordData} />
       <MeaningArea fontClass={fontClass} />
       <MeaningArea fontClass={fontClass} />
       <SourceArea fontClass={fontClass} />

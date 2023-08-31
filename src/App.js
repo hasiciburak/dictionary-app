@@ -12,10 +12,6 @@ function App() {
   const [fontClass, setFontClass] = useState(buttonContent)
   const [wordData, setWordData] = useState({})
 
-  let reqOptions = {
-    url: 'https://api.dictionaryapi.dev/api/v2/entries/en/hello',
-  }
-
   const font =
     buttonContent === 'Sans Serif'
       ? 'font-inter'
@@ -36,7 +32,7 @@ function App() {
   }, [buttonContent])
 
   useEffect(() => {
-    getData('hello')
+    getData('mother')
     console.log(wordData)
   }, [])
 

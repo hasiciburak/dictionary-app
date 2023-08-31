@@ -7,10 +7,15 @@ const Play = ({ audioFile }) => {
     // Sometimes some data can get empty and we can get issues on it
     // So we need to filter if any url not exists.
     // For this challenge we have only one
-    const data = Array.isArray(audioFile) && audioFile.filter((item) => item.audio !== '')
-    console.log('FILTERED AUDIOS', data)
-    const audio = new Audio(data[0].audio)
-    audio.play()
+    // So it's enough to get only one data
+    try {
+      const filteredAudios = Array.isArray(audioFile) && audioFile.filter((item) => item.audio !== '' && item.text)
+      console.log('FILTERED AUDIOS', filteredAudios)
+      const audio = new Audio(filteredAudios[0].audio)
+      audio.play()
+    } catch (e) {
+      alert('NOT PLAYED!')
+    }
   }
 
   return (

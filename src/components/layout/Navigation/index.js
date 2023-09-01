@@ -1,5 +1,4 @@
 import React from 'react'
-import ModeSwitch from '../../shared/ModeSwitch'
 import FontDropdown from '../../shared/FontDropdown'
 import bookIcon from '../../../assets/images/logo.svg'
 const Navigation = ({ buttonContent, setButtonContent, fontClass, mode, setMode }) => {
@@ -9,7 +8,6 @@ const Navigation = ({ buttonContent, setButtonContent, fontClass, mode, setMode 
       <div className="flex items-center gap-[26px]">
         <FontDropdown buttonContent={buttonContent} setButtonContent={setButtonContent} fontClass={fontClass} />
         <span className="w-[1px] h-full bg-custom-gray-2"></span>
-        {/* <ModeSwitch mode={mode} setMode={setMode} /> */}
       </div>
     </div>
   )

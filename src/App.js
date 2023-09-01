@@ -44,7 +44,7 @@ function App() {
 
   useEffect(() => {
     getData()
-    console.log(wordData)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [keyword])
 
   useEffect(() => {

@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 const MeaningArea = ({ fontClass, meaning, index }) => {
   const listClasses = 'text-dark-orchid mt-[13px]'
   const listSpanClasses = `text-custom-black ${fontClass} dark:text-white`
-  useEffect(() => {
-    console.log(`MEANING ${index}`, meaning)
-  }, [])
+
   return (
     <div className="">
       <div className="flex flex-row w-full items-center gap-[19px] mt-[34px]">

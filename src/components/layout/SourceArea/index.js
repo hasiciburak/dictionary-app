@@ -6,8 +6,8 @@ const SourceArea = ({ fontClass, urls }) => {
       <hr />
       <p className={`${fontClass} mt-[24px] text-custom-gray underline`}>Source</p>
       {urls?.length > 0 &&
-        urls.map((url) => (
-          <div className="mt-[7px] flex flex-row gap-[15px] w-full">
+        urls.map((url, index) => (
+          <div className="mt-[7px] flex flex-row gap-[15px] w-full" key={index}>
             <a href={url} target="_blank" className={`${fontClass}`} rel="noreferrer">
               {url}
               <img src={newWindowIcon} alt="New window Icon" />

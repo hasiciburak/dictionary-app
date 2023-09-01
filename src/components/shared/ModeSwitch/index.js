@@ -2,16 +2,21 @@ import React, { useState } from 'react'
 import ReactSwitch from 'react-switch'
 import Moon from '../../icons/Moon'
 
-const ModeSwitch = ({ mode }) => {
-  const [toggleSwtich, setToggleSwitch] = useState(false)
+const ModeSwitch = ({ mode, setMode }) => {
+  const [toggleSwitch, setToggleSwitch] = useState(false)
   return (
     <div
       className="flex gap-[10px] items-center
     "
     >
       <ReactSwitch
-        checked={toggleSwtich}
-        onChange={() => setToggleSwitch(!toggleSwtich)}
+        checked={toggleSwitch}
+        onChange={() => {
+          setToggleSwitch(!toggleSwitch)
+          console.log('Toggle switch', toggleSwitch)
+          toggleSwitch ? setMode('dark') : setMode('light')
+          console.log('MODE', mode)
+        }}
         checkedIcon={false}
         uncheckedIcon={false}
         handleDiameter={14}
@@ -22,7 +27,7 @@ const ModeSwitch = ({ mode }) => {
         onHandleColor="#FFFFFF"
         offHandleColor="#FFFFFF"
       />
-      <Moon mode={mode} toggleSwitch={toggleSwtich} />
+      <Moon toggleSwitch={toggleSwitch} />
     </div>
   )
 }

@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-const NoDefinition = () => {
+const NoDefinition = ({ errorInfo }) => {
+  useEffect(() => {
+    console.log('ERRORINFO', errorInfo)
+  })
   return (
     <div className="mt-[132px] text-center mx-auto">
       <h1>😕</h1>
-      <h2 className="font-bold mt-[44px]">No Definitions Found</h2>
+      <h2 className="font-bold mt-[44px]">{errorInfo.response.data.title}</h2>
       <p className="mt-[24px] text-custom-gray">
-        Sorry pal, we couldn't find definitions for the word you were looking for. You can try the search again at later
-        time or head to the web instead.
+        {errorInfo.response.data.message}
+        {errorInfo.response.data.resolution}
       </p>
     </div>
   )

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Play from '../../icons/Play'
 import SearchBar from '../../shared/SearchBar'
 
-const Header = ({ fontClass, wordData }) => {
+const Header = ({ fontClass, wordData, error, keyword, keywordRef, setKeyword }) => {
   const [phoneticWord, setPhoneticWord] = useState('')
   const filterPhonetic = () => {
     const data = Array.isArray(wordData.phonetics)
@@ -18,7 +18,13 @@ const Header = ({ fontClass, wordData }) => {
   }, [wordData])
   return (
     <>
-      <SearchBar classes="mt-[24px]" fontClass={fontClass} />
+      <SearchBar
+        classes="mt-[24px]"
+        fontClass={fontClass}
+        keyword={keyword}
+        keywordRef={keywordRef}
+        setKeyword={setKeyword}
+      />
       <div
         className={`flex justify-between items-center mt-[28px]
     `}
@@ -27,9 +33,11 @@ const Header = ({ fontClass, wordData }) => {
           <h1 className={`${fontClass} font-bold`}>{wordData.word}</h1>
           <p className={`${fontClass} text-dark-orchid`}>{phoneticWord}</p>
         </div>
-        <div>
-          <Play audioFile={wordData.phonetics} />
-        </div>
+        {!error && keyword !== '' && (
+          <div>
+            <Play audioFile={wordData.phonetics} />
+          </div>
+        )}
       </div>
     </>
   )

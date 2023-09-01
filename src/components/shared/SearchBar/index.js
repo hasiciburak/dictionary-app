@@ -14,6 +14,7 @@ const SearchBar = ({ classes, fontClass, keyword, keywordRef, setKeyword }) => {
         className={`bg-custom-gray-2 focus-visible:border-0 focus-visible:outline-none text-base md:text-xl font-bold ${fontClass} text-custom-black-3 dark:bg-custom-black-2 dark:text-white dark:placeholder-opacity-25 search-input w-full`}
         ref={keywordRef}
         placeholder="Ex: keyboard"
+        onKeyDown={(e) => e.key === 'Enter' && searchWord()}
       />
       <Search onClick={searchWord} />
     </div>

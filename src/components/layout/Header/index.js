@@ -29,14 +29,17 @@ const Header = ({ fontClass, wordData, error, keyword, keywordRef, setKeyword })
         className={`flex justify-between items-center mt-[28px]
     `}
       >
-        <div>
-          <h1 className={`${fontClass} font-bold`}>{wordData.word}</h1>
-          <p className={`${fontClass} text-dark-orchid`}>{phoneticWord}</p>
-        </div>
         {!error && keyword !== '' && (
-          <div>
-            <Play audioFile={wordData.phonetics} />
-          </div>
+          <>
+            <div>
+              <h1 className={`${fontClass} font-bold`}>{wordData.word}</h1>
+              <p className={`${fontClass} text-dark-orchid`}>{phoneticWord}</p>
+            </div>
+
+            <div>
+              <Play audioFile={wordData.phonetics} />
+            </div>
+          </>
         )}
       </div>
     </>
